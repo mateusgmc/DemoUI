@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DemoUI.Core.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,19 +11,19 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace DemoUI.MaterialDesign
+namespace DemoUI.MaterialDesign.Views
 {
     /// <summary>
-    /// Interação lógica para MainWindow.xam
+    /// Lógica interna para MainWindow.xaml
     /// </summary>
     public partial class MainWindow : Window
     {
         public MainWindow()
         {
             InitializeComponent();
+            DataContext = new MainViewModel();
         }
     }
 }
