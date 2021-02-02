@@ -17,11 +17,11 @@ namespace DemoUI.Core.ViewModels
 
 
             Observable.Merge(
-                    this.WhenAny(s => s.Campo1, t => t),
-                    this.WhenAny(s => s.Campo2, t => t),
-                    this.WhenAny(s => s.Campo3, t => t),
-                    this.WhenAny(s => s.Campo4, t => t),
-                    this.WhenAny(s => s.Campo5, t => t)
+                    this.WhenAny(s => s.Campo1, t => t).Skip(1),
+                    this.WhenAny(s => s.Campo2, t => t).Skip(1),
+                    this.WhenAny(s => s.Campo3, t => t).Skip(1),
+                    this.WhenAny(s => s.Campo4, t => t).Skip(1),
+                    this.WhenAny(s => s.Campo5, t => t).Skip(1)
                 )
                 .Subscribe(change =>
                 {
