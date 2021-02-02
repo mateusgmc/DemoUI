@@ -1,8 +1,10 @@
 ﻿using DemoUI.Core.Models;
 using DemoUI.Core.Services;
 using ReactiveUI;
+using ReactiveUI.Fody.Helpers;
 using System;
 using System.Collections.ObjectModel;
+using System.Reactive.Linq;
 
 namespace DemoUI.Core.ViewModels
 {
@@ -13,54 +15,43 @@ namespace DemoUI.Core.ViewModels
             var pessoas = PessoaDataService.GetAll();
             Pessoas = new ObservableCollection<Pessoa>(pessoas);
 
-            this.WhenAnyValue(s => s.CampoUm)
-                .Subscribe(v =>
-                {
-                    var propName = nameof(CampoUm);
-                    if (string.IsNullOrWhiteSpace(v))
-                    {
-                        AddError("Esse campo não pode ficar em branco.", propName);
-                    }
-                    else
-                    {
-                        RemoveErrors(propName);
-                    }
-                });
 
-            this.WhenAnyValue(s => s.CampoDois)
-                .Subscribe(v =>
+            Observable.Merge(
+                    this.WhenAny(s => s.Campo1, t => t),
+                    this.WhenAny(s => s.Campo2, t => t),
+                    this.WhenAny(s => s.Campo3, t => t),
+                    this.WhenAny(s => s.Campo4, t => t),
+                    this.WhenAny(s => s.Campo5, t => t)
+                )
+                .Subscribe(change =>
                 {
-                    var propName = nameof(CampoDois);
-                    if (string.IsNullOrWhiteSpace(v))
+                    string propertyName = change.GetPropertyName();
+                    string value = change.GetValue();
+                    if (string.IsNullOrWhiteSpace(value))
                     {
-                        AddError("Esse campo não pode ficar em branco.", propName);
+                        AddError("Esse campo não pode ficar em branco.", propertyName);
                     }
                     else
                     {
-                        RemoveErrors(propName);
-                    }
-                });
-
-            this.WhenAnyValue(s => s.CampoQuatro)
-                .Subscribe(v =>
-                {
-                    var propName = nameof(CampoQuatro);
-                    if (string.IsNullOrWhiteSpace(v))
-                    {
-                        AddError("Esse campo não pode ficar em branco.", propName);
-                    }
-                    else
-                    {
-                        RemoveErrors(propName);
+                        RemoveErrors(propertyName);
                     }
                 });
         }
 
-        public string CampoUm { get; set; }
+        [Reactive]
+        public string Campo1 { get; set; }
 
-        public string CampoDois { get; set; }
+        [Reactive]
+        public string Campo2 { get; set; }
 
-        public string CampoQuatro { get; set; }
+        [Reactive]
+        public string Campo3 { get; set; }
+
+        [Reactive]
+        public string Campo4 { get; set; }
+
+        [Reactive]
+        public string Campo5 { get; set; }
 
         public ObservableCollection<Pessoa> Pessoas { get; }
     }

@@ -43,7 +43,8 @@
                             <ColumnDefinition />
                         </Grid.ColumnDefinitions>
 
-                        <TextBox VerticalAlignment="Center" VerticalContentAlignment="Center" Margin="2" mah:TextBoxHelper.Watermark="Campo um" />
+                        <!--- Campo1 -->
+                        <TextBox VerticalAlignment="Center" VerticalContentAlignment="Center" Margin="2" Text="{Binding Campo1, UpdateSourceTrigger=PropertyChanged}" mah:TextBoxHelper.Watermark="Campo um" />
                         <TextBox VerticalAlignment="Center" VerticalContentAlignment="Center" Grid.Column="1" Margin="2" IsEnabled="False" mah:TextBoxHelper.Watermark="Campo dois" />
                     </Grid>
 
@@ -53,7 +54,8 @@
                             <ColumnDefinition Width="Auto" />
                         </Grid.ColumnDefinitions>
 
-                        <TextBox VerticalAlignment="Center" VerticalContentAlignment="Center" Margin="2" mah:TextBoxHelper.Watermark="Outro campo" />
+                        <!--- Campo3 -->
+                        <TextBox VerticalAlignment="Center" VerticalContentAlignment="Center" Margin="2" Text="{Binding Campo3, UpdateSourceTrigger=PropertyChanged}" mah:TextBoxHelper.Watermark="Campo três" />
                         <ComboBox Width="150" Margin="2" SelectedIndex="0" VerticalAlignment="Center" Grid.Column="1">
                             <ComboBoxItem>Item Exemplo 1</ComboBoxItem>
                             <ComboBoxItem>Item Exemplo 2</ComboBoxItem>
@@ -76,8 +78,9 @@
                                 <RowDefinition Height="Auto" />
                             </Grid.RowDefinitions>
 
-                            <TextBlock Grid.Row="0">Campo (TextBlock) 1:</TextBlock>
-                            <TextBox Grid.Row="1" VerticalAlignment="Center" VerticalContentAlignment="Center" />
+                            <TextBlock Grid.Row="0">Campo (TextBlock) 4:</TextBlock>
+                            <!-- Campo4 -->
+                            <TextBox Grid.Row="1" VerticalAlignment="Center" Text="{Binding Campo4, UpdateSourceTrigger=PropertyChanged}" VerticalContentAlignment="Center" />
 
                             <Grid Grid.Row="2" Margin="0, 10">
                                 <Grid.ColumnDefinitions>
@@ -85,9 +88,10 @@
                                     <ColumnDefinition />
                                 </Grid.ColumnDefinitions>
                                 <Border VerticalAlignment="Center" HorizontalAlignment="Left" Grid.Column="0" Background="{StaticResource MahApps.Brushes.Accent2}" Padding="5">
-                                    <TextBlock VerticalAlignment="Center">TextBlock com Borda 1:</TextBlock>
+                                    <TextBlock VerticalAlignment="Center">TextBlock com Borda Personalizada:</TextBlock>
                                 </Border>
-                                <TextBox Margin="2, 0, 0, 0" VerticalAlignment="Center" VerticalContentAlignment="Center" Grid.Column="1" />
+                                <!-- Campo5 -->
+                                <TextBox Margin="2, 0, 0, 0" VerticalAlignment="Center" VerticalContentAlignment="Center" Grid.Column="1" Text="{Binding Campo5, UpdateSourceTrigger=PropertyChanged}" />
                             </Grid>
                         </Grid>
 
