@@ -1,4 +1,6 @@
-﻿using System;
+﻿using DemoUI.Core.ViewModels;
+using DemoUI.MahApps.Controls;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -17,11 +19,12 @@ namespace DemoUI.MahApps.Views
     /// <summary>
     /// Lógica interna para MainWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class MainWindow : MetroShellWindow
     {
         public MainWindow()
         {
             InitializeComponent();
+            DataContext = new MainViewModel();
         }
     }
 }
