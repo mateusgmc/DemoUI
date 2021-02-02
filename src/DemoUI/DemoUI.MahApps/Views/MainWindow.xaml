@@ -7,107 +7,194 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:local="clr-namespace:DemoUI.MahApps.Views"
+    xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
     mc:Ignorable="d"
     Title="MainWindow" Height="450" Width="800">
 
-    <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="Auto" />
-            <RowDefinition Height="Auto" />
-            <RowDefinition Height="Auto" />
-            <RowDefinition Height="Auto" />
-            <RowDefinition Height="Auto" />
-            <RowDefinition Height="Auto" />
-            <RowDefinition />
-        </Grid.RowDefinitions>
+    <TabControl>
+        <TabItem Header="TabItem 1">
+            <ScrollViewer VerticalScrollBarVisibility="Auto">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
 
-        <Menu Grid.Row="0" Margin="0, 0, 0, 20">
-            <MenuItem Header="Menu Item 1" />
-            <MenuItem Header="Menu Item 2" />
-            <MenuItem Header="Menu Item 3" />
-            <MenuItem Header="Menu Item 4" />
-            <MenuItem Header="Menu Item 5" />
-        </Menu>
+                    <Menu Grid.Row="0" Margin="0, 0, 0, 20">
+                        <MenuItem Header="Menu Item 1" />
+                        <MenuItem Header="Menu Item 2">
+                            <MenuItem Header="SubMenu Item 1" />
+                            <MenuItem Header="SubMenu Item 2" />
+                            <MenuItem Header="SubMenu Item 3" />
+                        </MenuItem>
+                        <MenuItem Header="Menu Item 3" />
+                        <MenuItem Header="Menu Item 4" />
+                        <MenuItem Header="Menu Item 5" />
+                    </Menu>
 
-        <Grid Grid.Row="1" Margin="5">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition />
-                <ColumnDefinition />
-            </Grid.ColumnDefinitions>
+                    <Grid Grid.Row="1" Margin="5">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition />
+                            <ColumnDefinition />
+                        </Grid.ColumnDefinitions>
 
-            <TextBox VerticalAlignment="Center" VerticalContentAlignment="Center" Margin="2" mah:TextBoxHelper.Watermark="Campo um" />
-            <TextBox VerticalAlignment="Center" VerticalContentAlignment="Center" Grid.Column="1" Margin="2" IsEnabled="False" mah:TextBoxHelper.Watermark="Campo dois" />
-        </Grid>
+                        <TextBox VerticalAlignment="Center" VerticalContentAlignment="Center" Margin="2" mah:TextBoxHelper.Watermark="Campo um" />
+                        <TextBox VerticalAlignment="Center" VerticalContentAlignment="Center" Grid.Column="1" Margin="2" IsEnabled="False" mah:TextBoxHelper.Watermark="Campo dois" />
+                    </Grid>
 
-        <Grid Grid.Row="2" Margin="5">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition />
-                <ColumnDefinition Width="Auto" />
-            </Grid.ColumnDefinitions>
+                    <Grid Grid.Row="2" Margin="5">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition />
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
 
-            <TextBox VerticalAlignment="Center" VerticalContentAlignment="Center" Margin="2" mah:TextBoxHelper.Watermark="Outro campo" />
-            <ComboBox Width="150" Margin="2" SelectedIndex="0" VerticalAlignment="Center" Grid.Column="1">
-                <ComboBoxItem>Item Exemplo 1</ComboBoxItem>
-                <ComboBoxItem>Item Exemplo 2</ComboBoxItem>
-                <ComboBoxItem>Item Exemplo 3</ComboBoxItem>
-            </ComboBox>
-        </Grid>
+                        <TextBox VerticalAlignment="Center" VerticalContentAlignment="Center" Margin="2" mah:TextBoxHelper.Watermark="Outro campo" />
+                        <ComboBox Width="150" Margin="2" SelectedIndex="0" VerticalAlignment="Center" Grid.Column="1">
+                            <ComboBoxItem>Item Exemplo 1</ComboBoxItem>
+                            <ComboBoxItem>Item Exemplo 2</ComboBoxItem>
+                            <ComboBoxItem>Item Exemplo 3</ComboBoxItem>
+                        </ComboBox>
+                    </Grid>
 
-        <Separator Grid.Row="3" Margin="0, 20" />
+                    <Separator Grid.Row="3" Margin="0, 20" />
 
-        <Grid Grid.Row="4" Margin="5">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition />
-                <ColumnDefinition />
-            </Grid.ColumnDefinitions>
+                    <Grid Grid.Row="4" Margin="5">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition />
+                            <ColumnDefinition />
+                        </Grid.ColumnDefinitions>
 
-            <Grid Grid.Column="0">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="Auto" />
-                    <RowDefinition Height="Auto" />
-                    <RowDefinition Height="Auto" />
-                </Grid.RowDefinitions>
+                        <Grid Grid.Column="0">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                            </Grid.RowDefinitions>
 
-                <TextBlock Grid.Row="0">Campo (TextBlock) 1:</TextBlock>
-                <TextBox Grid.Row="1" VerticalAlignment="Center" VerticalContentAlignment="Center" />
+                            <TextBlock Grid.Row="0">Campo (TextBlock) 1:</TextBlock>
+                            <TextBox Grid.Row="1" VerticalAlignment="Center" VerticalContentAlignment="Center" />
 
-                <Grid Grid.Row="2" Margin="0, 10">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="Auto" />
-                        <ColumnDefinition />
-                    </Grid.ColumnDefinitions>
-                    <Border VerticalAlignment="Center" HorizontalAlignment="Left" Grid.Column="0" Background="{StaticResource MahApps.Brushes.Accent3}" Padding="5">
-                        <TextBlock VerticalAlignment="Center">TextBlock com Borda 1:</TextBlock>
-                    </Border>
-                    <TextBox Margin="2, 0, 0, 0" VerticalAlignment="Center" VerticalContentAlignment="Center" Grid.Column="1" />
+                            <Grid Grid.Row="2" Margin="0, 10">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition />
+                                </Grid.ColumnDefinitions>
+                                <Border VerticalAlignment="Center" HorizontalAlignment="Left" Grid.Column="0" Background="{StaticResource MahApps.Brushes.Accent2}" Padding="5">
+                                    <TextBlock VerticalAlignment="Center">TextBlock com Borda 1:</TextBlock>
+                                </Border>
+                                <TextBox Margin="2, 0, 0, 0" VerticalAlignment="Center" VerticalContentAlignment="Center" Grid.Column="1" />
+                            </Grid>
+                        </Grid>
+
+                        <Calendar Grid.Column="1" Margin="5, 0" />
+                    </Grid>
+
+
+                    <GroupBox Header="GroupBox um" Grid.Row="5">
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Margin="5">
+                            <Button Margin="2" Width="100">Botão 1</Button>
+                            <Button Margin="2" Width="100">Botão 2</Button>
+                            <Button Margin="2" Width="100" IsEnabled="False">Botão 3</Button>
+                        </StackPanel>
+                    </GroupBox>
+
+                    <Grid Grid.Row="6">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition />
+                            <ColumnDefinition />
+                        </Grid.ColumnDefinitions>
+
+                        <GroupBox Grid.Column="0" Margin="5" Header="GroupBox dois">
+                            <DataGrid Style="{StaticResource MahApps.Styles.DataGrid.Azure}" ItemsSource="{Binding Pessoas}" />
+                        </GroupBox>
+
+                        <GroupBox Grid.Column="1" Margin="5" Header="GroupBox tres">
+                            <DataGrid ItemsSource="{Binding Pessoas}" />
+                        </GroupBox>
+                    </Grid>
                 </Grid>
-            </Grid>
+            </ScrollViewer>
+        </TabItem>
 
-            <Calendar Grid.Column="1" Margin="5, 0" />
-        </Grid>
-       
+        <TabItem Header="MahApps.Metro">
+            <ScrollViewer VerticalScrollBarVisibility="Auto">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
 
-        <GroupBox Header="GroupBox um" Grid.Row="5">
-            <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Margin="5">
-                <Button Margin="2" Width="100">Botão 1</Button>
-                <Button Margin="2" Width="100">Botão 2</Button>
-                <Button Margin="2" Width="100" IsEnabled="False">Botão 3</Button>
-            </StackPanel>
-        </GroupBox>
+                    <GroupBox Grid.Row="0" Header="ProgressRing">
+                        <mah:ProgressRing Margin="0, 40" />
+                    </GroupBox>
 
-        <Grid Grid.Row="6">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition />
-                <ColumnDefinition />
-            </Grid.ColumnDefinitions>
+                    <GroupBox Grid.Row="1" Margin="0, 20" Header="ProgressBar 1">
+                        <ProgressBar  Margin="10, 40" IsIndeterminate="True" />
+                    </GroupBox>
 
-            <GroupBox Grid.Column="0" Margin="5" Header="GroupBox dois">
-                <DataGrid Style="{StaticResource MahApps.Styles.DataGrid.Azure}" ItemsSource="{Binding Pessoas}" />
-            </GroupBox>
+                    <GroupBox Grid.Row="2" Margin="0, 20" Header="ProgressBar 2">
+                        <ProgressBar  Margin="10, 40" Value="40" />
+                    </GroupBox>
 
-            <GroupBox Grid.Column="1" Margin="5" Header="GroupBox tres">
-                <DataGrid ItemsSource="{Binding Pessoas}" />
-            </GroupBox>
-        </Grid>
-    </Grid>
+                    <GroupBox Grid.Row="3" Margin="0, 20" Header="Tile + Modern Icon">
+                        <ItemsControl FocusVisualStyle="{x:Null}">
+                            <ItemsControl.ItemsPanel>
+                                <ItemsPanelTemplate>
+                                    <WrapPanel />
+                                </ItemsPanelTemplate>
+                            </ItemsControl.ItemsPanel>
+
+                            <mah:Tile
+                            Margin="5"
+                            Width="200"
+                            Title="Titulo Refresh 1"
+                            mah:ControlsHelper.MouseOverBorderBrush="{DynamicResource MahApps.Brushes.ThemeForeground}"
+                            Background="#3498db"
+                            HorizontalTitleAlignment="Right">
+                                <iconPacks:PackIconModern Width="40" Height="40" Kind="Refresh" />
+                            </mah:Tile>
+
+                            <mah:Tile
+                            Margin="5"
+                            Width="200"
+                            Title="Titulo Refresh 2"
+                            mah:ControlsHelper.MouseOverBorderBrush="{DynamicResource MahApps.Brushes.ThemeForeground}"
+                            Background="#ff9f43"
+                            HorizontalTitleAlignment="Right">
+                                <iconPacks:PackIconModern Width="40" Height="40" Kind="Refresh" />
+                            </mah:Tile>
+
+                            <mah:Tile
+                            Margin="5"
+                            Width="200"
+                            Title="Titulo Refresh 3"
+                            mah:ControlsHelper.MouseOverBorderBrush="{DynamicResource MahApps.Brushes.ThemeForeground}"
+                            Background="#2ecc71"
+                            HorizontalTitleAlignment="Right">
+                                <iconPacks:PackIconModern Width="40" Height="40" Kind="Refresh" />
+                            </mah:Tile>
+
+                            <mah:Tile
+                            Margin="5"
+                            Width="200"
+                            Title="Configurações"
+                            mah:ControlsHelper.MouseOverBorderBrush="{DynamicResource MahApps.Brushes.ThemeForeground}"
+                            Background="#7f8fa6"
+                            HorizontalTitleAlignment="Right">
+                                <iconPacks:PackIconModern Width="40" Height="40" Kind="Settings" />
+                            </mah:Tile>
+                        </ItemsControl>
+                    </GroupBox>
+                </Grid>
+            </ScrollViewer>
+        </TabItem>
+    </TabControl>
 </controls:MetroShellWindow>
